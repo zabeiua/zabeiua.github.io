@@ -92,7 +92,7 @@ body {
 */
 
 @media (min-width: 800px) {
-	div {
+	.links {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -102,12 +102,19 @@ body {
   /* CSS */
   
 }
-
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+/* Footer height */
+	font-size: 10px;
+}
     </style>
 </head>
 <body>
 <center>
-	<div>
+	<div class="links">
 <a class="fcc-btn" target="blank" href="https://www.mk.ru/">MK</a>
 <a class="fcc-btn" target="blank"  href="https://www.kp.ru/">КП</a> 
 <a class="fcc-btn" target="blank"  href="https://russian.rt.com/">RT</a>
@@ -133,9 +140,14 @@ body {
 <a class="fcc-btn" target="blank"  href="https://www.whatismyip.com/">Whatismyip</a>
 <a class="fcc-btn" target="blank"  href="https://browserleaks.com/ip">Browserleaks</a>
 <a class="fcc-btn" target="blank"  href="https://www.speedtest.net/">Speed Test</a>
-	</div>
-	<div style="display:none" id="helpText" class="helptTextBox">
+<a class="fcc-btn" target="blank"  href="https://bard.google.com/">Bard</a>
 
+	</div>
+<footer>
+	The links will open in the same tab on the right, replacing each other
+	<br>
+	Bard недоступен из России без VPN
+	</footer>
 
 
 </body>
