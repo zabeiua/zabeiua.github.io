@@ -33,6 +33,7 @@ footer {
       margin-right: -50%;
       transform: translate(-50%, -50%);
   height: 2.5rem;
+
 /* Footer height */
 }
 	
@@ -41,14 +42,19 @@ footer {
 		#container {
     overflow:hidden;
     position:relative;
+			  border-radius: 10px;
+
 }
 #hideMe {
     -webkit-animation: cssAnimation 10s forwards; 
     animation: cssAnimation 10s forwards;
-    background: #280667;
+	  background: rgba(0,0,0,0.6);
+
 	padding: 15px;
     box-shadow:  0px 0px 10px 5px rgba(0, 0, 0, 0.5);
     z-index: 10;
+	  border-radius: 10px;
+
 }
 @-webkit-keyframes gradient {
 	0% {
@@ -179,9 +185,16 @@ footer {
 <div id='container'>
     <div id='hideMe'><h3>Just my links</h3>
 		<br>
-		The links will open in the same tab on the right, replacing each other
+		Ссылки будут открываться справа в одной и той же вкладке,<br> ибо target="blank", а не target="_blank"
 	<br>
 	Bard и Firefly недоступны из России без VPN
+	
+	<br>
+	Страница без скриптов. Чистый css
+		<br>
+		Шрифт Ubuntu
+		<br>
+		Единственное изображение - favicon 
 	<br>
 	Эта надпись исчезнет через 10 секунд
 	</div>
