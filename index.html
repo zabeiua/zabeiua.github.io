@@ -104,7 +104,7 @@ body {
 }
 footer {
   position: absolute;
-  bottom: 0;
+  top: 0;
 	left: 50%;
       margin-right: -50%;
       transform: translate(-50%, -50%);
@@ -121,6 +121,13 @@ footer {
 #hideMe {
     -webkit-animation: cssAnimation 10s forwards; 
     animation: cssAnimation 10s forwards;
+    background: blue;
+	padding: 15px;
+    box-shadow:  0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+	margin-top: 15px;
+
+	
 }
 @keyframes cssAnimation {
     0%   {opacity: 1;}
@@ -173,7 +180,9 @@ footer {
 <footer>
 	<div>
 <div id='container'>
-    <div id='hideMe'>The links will open in the same tab on the right, replacing each other
+    <div id='hideMe'><h3>Just my links</h3>
+		<br>
+		The links will open in the same tab on the right, replacing each other
 	<br>
 	Bard и Firefly недоступны из России без VPN
 	<br>
