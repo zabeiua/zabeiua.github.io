@@ -105,11 +105,36 @@ body {
 footer {
   position: absolute;
   bottom: 0;
-  width: 100%;
+	left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
   height: 2.5rem;
 /* Footer height */
-	font-size: 10px;
 }
+	
+		
+		
+		#container {
+    overflow:hidden;
+    position:relative;
+}
+#hideMe {
+    -webkit-animation: cssAnimation 10s forwards; 
+    animation: cssAnimation 10s forwards;
+}
+@keyframes cssAnimation {
+    0%   {opacity: 1;}
+    90%  {opacity: 1;}
+    100% {opacity: 0;}
+}
+@-webkit-keyframes cssAnimation {
+    0%   {opacity: 1;}
+    90%  {opacity: 1;}
+    100% {opacity: 0;}
+}
+		
+		
+		
     </style>
 </head>
 <body>
@@ -141,12 +166,21 @@ footer {
 <a class="fcc-btn" target="blank"  href="https://browserleaks.com/ip">Browserleaks</a>
 <a class="fcc-btn" target="blank"  href="https://www.speedtest.net/">Speed Test</a>
 <a class="fcc-btn" target="blank"  href="https://bard.google.com/">Bard</a>
+<a class="fcc-btn" target="blank"  href="https://firefly.adobe.com/">Firefly</a>
+
 
 	</div>
 <footer>
-	The links will open in the same tab on the right, replacing each other
+	<div>
+<div id='container'>
+    <div id='hideMe'>The links will open in the same tab on the right, replacing each other
 	<br>
-	Bard недоступен из России без VPN
+	Bard и Firefly недоступны из России без VPN
+	<br>
+	Эта надпись исчезнет через 10 секунд
+	</div>
+</div>
+	
 	</footer>
 
 
