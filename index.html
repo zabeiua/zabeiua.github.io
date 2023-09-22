@@ -26,7 +26,30 @@ body {
 
 
 }
-
+footer {
+  position: absolute;
+  top: 0;
+	left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+  height: 2.5rem;
+/* Footer height */
+}
+	
+		
+		
+		#container {
+    overflow:hidden;
+    position:relative;
+}
+#hideMe {
+    -webkit-animation: cssAnimation 10s forwards; 
+    animation: cssAnimation 10s forwards;
+    background: #280667;
+	padding: 15px;
+    box-shadow:  0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
 @-webkit-keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -102,33 +125,7 @@ body {
   /* CSS */
   
 }
-footer {
-  position: absolute;
-  top: 0;
-	left: 50%;
-      margin-right: -50%;
-      transform: translate(-50%, -50%);
-  height: 2.5rem;
-/* Footer height */
-}
-	
-		
-		
-		#container {
-    overflow:hidden;
-    position:relative;
-}
-#hideMe {
-    -webkit-animation: cssAnimation 10s forwards; 
-    animation: cssAnimation 10s forwards;
-    background: blue;
-	padding: 15px;
-    box-shadow:  0px 0px 10px 5px rgba(0, 0, 0, 0.5);
-    z-index: 10;
-	margin-top: 15px;
 
-	
-}
 @keyframes cssAnimation {
     0%   {opacity: 1;}
     90%  {opacity: 1;}
