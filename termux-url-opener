@@ -1,0 +1,8 @@
+tmux kill-session -t abc>/dev/null 2>&1
+tmux new -d -s abc
+tmux send-keys -t abc.0 "https://media.radios.ar:9270" ENTER
+#Playing video only version of youtube link in vlc
+am start -n org.videolan.vlc/.StartActivity -a android.intent.action.VIEW -d `yt-dlp -f bestvideo --get-url $1`
+#appending to the history file to play again later
+echo $1>>~/bin/urls_history.txt
+yt-dlp --print "%(title)s" $1>>~/bin/urls_history.txt
