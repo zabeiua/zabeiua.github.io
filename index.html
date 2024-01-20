@@ -119,29 +119,9 @@ body {
     </style>
 </head>
 <body>
-	<script>
-  document.getElementById("post-json-link").addEventListener("click", function() {
-      // Prepare your JSON data
-      var jsonData = {
-          // Your JSON data here
-	      "message": "resurrect"
-      };
-
-      // Create an AJAX request
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", "https://first-anteater-major.ngrok-free.app/webhookcallback", true);
-      xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.onreadystatechange = function() {
-          if (xhr.readyState === 4 && xhr.status === 200) {
-              // Handle the server response
-          }
-      };
-      xhr.send(JSON.stringify(jsonData));
-  });
-  </script>
+	
 <center>
 	<div class="links">
-<a href="#" id="post-json-link">Post JSON</a>
 
 <a class="fcc-btn" target="blank" href="https://dzen.ru/">Яндекс</a>
 <a class="fcc-btn" target="blank" href="https://dzen.ru/pogoda/?lat=55.89848709&lon=37.57001495">Погода</a>
