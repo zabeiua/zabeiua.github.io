@@ -8,18 +8,39 @@
   <button onclick="makeSmall()">Small</button>
   <button onclick="makeNormal()">Normal</button>
   <br><br>
-  <video width="420" controls>
+  <video id="video1" width="420" controls>
   <source src="Better_than_run.mp4" type="video/mp4">
     Your browser does not support HTML video.
   </video>
   &nbsp;
-  <video width="420" controls>
+  <video id="video1" width="420" controls>
   <source src="1_min_routine.mp4" type="video/mp4">
     Your browser does not support HTML video.
   </video>
 </div>
 
 <script>
+var myVideo = document.getElementById("video1");
+
+function playPause() {
+  if (myVideo.paused)
+    myVideo.play();
+  else
+    myVideo.pause();
+}
+
+function makeBig() {
+    myVideo.width = 560;
+}
+
+function makeSmall() {
+    myVideo.width = 320;
+}
+
+function makeNormal() {
+    myVideo.width = 420;
+}
+</script>
 
 </body>
 </html>
