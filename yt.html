@@ -1,56 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Video Player</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            margin-bottom: 20px;
-        }
-        .video-container video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .title {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        .description {
-            font-size: 16px;
-            color: #666;
-        }
-    </style>
+    <title>My YouTube Clone</title>
 </head>
 <body>
-    <div class="container">
-        <div class="video-container">
-            <video controls>
-                <source src="ExplainingComputers.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+    <div style="text-align: center;">
+        <video id="myVideo" width="640" height="360" controls>
+            <source src="ExplainingComputers.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <h2>My Awesome Video</h2>
+        <p>This is a description of my amazing video.</p>
+        <div style="text-align: center;">
+            <p>100K Views</p>
+            <p>10K Likes</p>
+            <p>500 Comments</p>
         </div>
-        <div class="title">Sample Video Title</div>
-        <div class="description">This is a description of the video. It can include details about the content, context, and any other relevant information.</div>
     </div>
 </body>
 </html>
