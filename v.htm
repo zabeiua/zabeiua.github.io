@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000;
+        }
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .video-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            flex-shrink: 0;
+        }
+        video {
+            width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container" id="videoContainer">
+        <div class="video-slide">
+            <video controls autoplay>
+                <source src="v/Better_than_run.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+        <div class="video-slide">
+            <video controls>
+                <source src="v/1_min_routine.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+        <div class="video-slide">
+            <video controls>
+                <source src="v/taichi.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+        <div class="video-slide">
+            <video controls>
+                <source src="v/daily.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+        <div class="video-slide">
+            <video controls>
+                <source src="v/zariadka_lioja.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+        <div class="video-slide">
+            <video controls>
+                <source src="v/jumping_jacks_burpee_sit.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        const container = document.getElementById('videoContainer');
+        let currentIndex = 0;
+
+        function swipeHandler(event) {
+            const slides = document.querySelectorAll('.video-slide');
+            const totalSlides = slides.length;
+
+            if (event.deltaY > 0 && currentIndex < totalSlides - 1) {
+                currentIndex++;
+            } else if (event.deltaY < 0 && currentIndex > 0) {
+                currentIndex--;
+            }
+
+            container.style.transform = `translateY(-${currentIndex * 100}vh)`;
+            container.style.transition = 'transform 0.3s ease-out';
+        }
+
+        container.addEventListener('wheel', swipeHandler);
+    </script>
+</body>
+</html>
+
