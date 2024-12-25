@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TikTok Style Videos</title>
+<style>
+  body { margin: 0; overflow: hidden; background-color: #000; }
+  .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+  }
+  .video-container-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Keep contain for best fit without cropping by default */
+    display: block;
+  }
+
+  /* Styles for smaller screens (phones) */
+  @media (max-width: 768px) { /* Adjust the breakpoint as needed */
+    video {
+      /* For vertical videos on phones, prioritize fitting the height */
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  .hidden {
+    display: none !important;
+  }
+</style>
+</head>
+<body>
+
+<div id="video-container">
+  <div class="video-container-item">
+    <video loop playsinline>
+      <source src="v/Better_than_run.mp4" type="video/mp4">
+      Your browser does not support HTML video.
+    </video>
+  </div>
+  <div class="video-container-item hidden">
+    <video loop playsinline>
+      <source src="v/1_min_routine.mp4" type="video/mp4">
+      Your browser does not support HTML video.
+    </video>
+  </div>
+  <div class="video-container-item hidden">
+    <video loop playsinline>
+      <source src="v/taichi.mp4" type="video/mp4">
+      Your browser does not support HTML video.
+    </video>
+  </div>
+  <div class="video-container-item hidden">
+    <video loop playsinline>
+      <source src="v/daily.mp4" type="video/mp4">
+      Your browser does not support HTML video.
+    </video>
+  </div>
+  <div class="video-container-item hidden">
+    <video loop playsinline>
+      <source src="v/zariadka_lioja.mp4" type="video/mp4">
+      Your browser does not support HTML video.
+    </video>
+  </div>
+  <div class="video-container-item hidden">
+    <video loop playsinline>
+      <source src="v/jumping_jacks_burpee_sit.mp4" type="video/mp4">
+      Your browser does not support HTML video.
+    </video>
+  </div>
+</div>
+
+<script>
+  const videoContainer = document.getElementById('video-container');
+  const videoItems = document.querySelectorAll('.video-container-item');
+  let currentVideoIndex = 0;
+  let touchStartY = 0;
+
+  function showVideo(index) {
+    videoItems.forEach((item, i) => {
+      const video = item.querySelector('video');
+      if (i === index) {
+        item.classList.remove('hidden');
+        if (video) {
+          video.play();
+        }
+      } else {
+        item.classList.add('hidden');
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
+      }
+    });
+  }
+
+  function nextVideo() {
+    currentVideoIndex = (currentVideoIndex + 1) % videoItems.length;
+    showVideo(currentVideoIndex);
+  }
+
+  function prevVideo() {
+    currentVideoIndex = (currentVideoIndex - 1 + videoItems.length) % videoItems.length;
+    showVideo(currentVideoIndex);
+  }
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowUp') {
+      prevVideo();
+    } else if (event.key === 'ArrowDown') {
+      nextVideo();
+    }
+  });
+
+  videoContainer.addEventListener('touchstart', function(event) {
+    touchStartY = event.touches[0].clientY;
+  });
+
+  videoContainer.addEventListener('touchend', function(event) {
+    const touchEndY = event.changedTouches[0].clientY;
+    const swipeDistance = touchStartY - touchEndY;
+    const threshold = 50;
+
+    if (swipeDistance > threshold) {
+      nextVideo();
+    } else if (swipeDistance < -threshold) {
+      prevVideo();
+    }
+  });
+
+  videoContainer.addEventListener('touchmove', function(event) {
+    event.preventDefault();
+  }, { passive: false });
+
+  // Optional: Autoplay the first video
+  const firstVideo = videoItems[0].querySelector('video');
+  if (firstVideo) {
+    firstVideo.play();
+  }
+</script>
+
+</body>
+</html>
