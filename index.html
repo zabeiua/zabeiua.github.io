@@ -2,6 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
 
+
 <style>
 body {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
@@ -11,14 +12,15 @@ body {
     height: 100vh;
     font-family: 'Ubuntu';
     font-size: 18px;
-    margin: 0; /* Reset margin to avoid conflicts */
-    padding-top: 40px; /* Add space at the top */
+    margin: 0; /* Ensure no default browser margin */
+    padding-top: 40px; /* Add spacing at the top */
 }
+
 #container {
     overflow: hidden;
-    position: relative;
     border-radius: 10px;
 }
+
 @-webkit-keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -30,6 +32,7 @@ body {
         background-position: 0% 50%;
     }
 }
+
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -41,6 +44,7 @@ body {
         background-position: 0% 50%;
     }
 }
+
 a {
     border-radius: 5px;
     padding: 10px;
@@ -48,6 +52,7 @@ a {
     background-color: #000;
     text-decoration: none;
 }
+
 .fcc-btn {
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
@@ -58,38 +63,30 @@ a {
     border-radius: 10px;
     display: inline-block;
     width: 120px;
-    margin: 3px;
+    margin: 10px; /* Adjust spacing between buttons */
 }
+
 .fcc-btn:hover {
     background-color: rgba(0, 0, 0, 0.5);
 }
+
 @media only screen and (max-width: 576px) {
     body {
         font-size: 20px;
     }
-    div {
-        position: absolute;
-        top: 60px; /* Adjust to add space on smaller screens */
-    }
 }
-@media (min-width: 800px) {
-    .links {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
-    }
-    footer {
-        visibility: visible; /* only visible if width > 800 */
-        color: white;
-    }
+
+footer {
+    visibility: visible;
+    color: white;
 }
+
 @keyframes cssAnimation {
     0% { opacity: 1; }
     90% { opacity: 1; }
     100% { opacity: 0; }
 }
+
 @-webkit-keyframes cssAnimation {
     0% { opacity: 1; }
     90% { opacity: 1; }
@@ -98,8 +95,8 @@ a {
 </style>
 
     
-	</head>
-	<body>
+		</head>
+		<body>
 	
 <center>
 	<div class="links">
