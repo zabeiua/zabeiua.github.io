@@ -6,16 +6,27 @@
 <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
 <style>
 body {
+    font-family: 'Ubuntu';
+    font-size: 18px;
+    margin: 0;
+    padding-top: 20px;
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+body.night {
     background: linear-gradient(-45deg, #1a0f0f, #0f1a1a, #0f0f1a, #1a1a0f);
     background-size: 400% 400%;
     -webkit-animation: gradient 15s ease infinite;
     animation: gradient 15s ease infinite;
     height: 100vh;
-    font-family: 'Ubuntu';
-    font-size: 18px;
-    margin: 0;
-    padding-top: 20px;
+    color: #e0e0e0;
 }
+
+body.day {
+    background: #f4f4f9;
+    color: #333;
+}
+
 #container {
     overflow: hidden;
     border-radius: 10px;
@@ -45,29 +56,56 @@ body {
 a {
     border-radius: 5px;
     padding: 10px;
-    color: #e0e0e0;
-    background-color: #1a1a1a;
     text-decoration: none;
 }
-.fcc-btn {
-    background-color: rgba(30, 30, 30, 0.8);
+
+body.night a {
     color: #e0e0e0;
+    background-color: #1a1a1a;
+}
+
+body.day a {
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.fcc-btn {
     padding: 15px 25px;
-    text-decoration: none;
     cursor: pointer;
-    border: 1px solid rgba(60, 60, 60, 0.3);
     border-radius: 10px;
     display: inline-block;
     width: 120px;
     margin: 5px;
     transition: all 0.3s ease;
+    text-decoration: none;
 }
-.fcc-btn:hover {
+
+body.night .fcc-btn {
+    background-color: rgba(30, 30, 30, 0.8);
+    color: #e0e0e0;
+    border: 1px solid rgba(60, 60, 60, 0.3);
+}
+
+body.night .fcc-btn:hover {
     background-color: rgba(50, 50, 50, 0.9);
     border-color: rgba(80, 80, 80, 0.5);
     color: #ffffff;
     transform: translateY(-1px);
 }
+
+body.day .fcc-btn {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+body.day .fcc-btn:hover {
+    background-color: #f0f0f0;
+    border-color: #bbb;
+    transform: translateY(-1px);
+}
+
 @media only screen and (max-width: 576px) {
     body {
         font-size: 20px;
@@ -75,8 +113,16 @@ a {
 }
 footer {
     visibility: visible;
+}
+
+body.night footer {
     color: #c0c0c0;
 }
+
+body.day footer {
+    color: #555;
+}
+
 @keyframes cssAnimation {
     0% { opacity: 1; }
     90% { opacity: 1; }
@@ -87,9 +133,134 @@ footer {
     90% { opacity: 1; }
     100% { opacity: 0; }
 }
+
+/* Hamburger Menu Styles */
+#menu__toggle {
+  opacity: 0;
+}
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  left: 0 !important;
+}
+.menu__btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1001;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  transition-duration: .25s;
+}
+
+body.night .menu__btn > span,
+body.night .menu__btn > span::before,
+body.night .menu__btn > span::after {
+  background-color: #fff;
+}
+
+body.day .menu__btn > span,
+body.day .menu__btn > span::before,
+body.day .menu__btn > span::after {
+  background-color: #333;
+}
+
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+.menu__box {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 150px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  transition-duration: .25s;
+  z-index: 1000;
+}
+
+body.night .menu__box {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+}
+
+body.day .menu__box {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, .1);
+}
+
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: .25s;
+  cursor: pointer;
+}
+
+body.night .menu__item {
+  color: #fff;
+}
+
+body.day .menu__item {
+  color: #333;
+}
+
+body.night .menu__item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+body.day .menu__item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 </style>
 </head>
-<body>
+<body class="night">
+
+<div class="hamburger-menu">
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+        <span></span>
+    </label>
+    <ul class="menu__box">
+        <li><a class="menu__item" onclick="setTheme('day')">Day</a></li>
+        <li><a class="menu__item" onclick="setTheme('night')">Night</a></li>
+        <li><a class="menu__item" href="#">Girls</a></li>
+        <li><a class="menu__item" href="#">Time</a></li>
+        <li><a class="menu__item" href="#">Help</a></li>
+        <li><a class="menu__item" href="#">SMS</a></li>
+    </ul>
+</div>
 
 <center>
 	<div class="links">
@@ -178,5 +349,22 @@ footer {
 <a class="fcc-btn" target="blank"  href="https://www.youtube.com/@americaenvivo/live">America TV</a>
 <a class="fcc-btn" target="blank"  href="https://www.noticiascaracol.com/en-vivo">Caracol</a>
 	</div>
+</center>
+
+<script>
+function setTheme(theme) {
+    document.body.className = theme;
+    localStorage.setItem('theme', theme);
+    // Close the menu
+    document.getElementById('menu__toggle').checked = false;
+}
+
+// On page load, set the theme from localStorage or default to night
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme') || 'night';
+    setTheme(savedTheme);
+});
+</script>
+
 </body>
 </html>
