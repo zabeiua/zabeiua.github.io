@@ -1,0 +1,32 @@
+[
+  {
+    "channel_number": 1,
+    "title": "Todo Noticias",
+    "url": "https://www.youtube.com/@todonoticias/live"
+  },
+  {
+    "channel_number": 2,
+    "title": "C5N",
+    "url": "https://www.youtube.com/@c5n/live"
+  },
+  {
+    "channel_number": 3,
+    "title": "TV Publica",
+    "url": "https://www.youtube.com/@TVPublicaArgentina/live"
+  },
+  {
+    "channel_number": 4,
+    "title": "Canal 26",
+    "url": "https://www.youtube.com/@canal26/live"
+  },
+  {
+    "channel_number": 5,
+    "title": "America TV",
+    "url": "https://www.youtube.com/@americaenvivo/live"
+  },
+{
+    "channel_number": 6,
+    "title": "Radio Mitre",
+    "url": "https://www.youtube.com/@Radiomitre/live"
+  }
+]
