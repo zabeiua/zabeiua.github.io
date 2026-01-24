@@ -206,6 +206,12 @@ footer {
 .menu__item:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
+.click-count {
+  display: block;
+  font-size: 0.75em;
+  opacity: 0.7;
+  margin-top: 5px;
+}
 </style>
 </head>
 <body class="night">
@@ -335,10 +341,41 @@ function setTheme(theme) {
     document.getElementById('menu__toggle').checked = false;
 }
 
+function initCounters() {
+    const links = document.querySelectorAll('.fcc-btn');
+    links.forEach(link => {
+        const url = link.getAttribute('href');
+        if (!url) return;
+
+        // Create counter element if it doesn't exist
+        let counter = link.querySelector('.click-count');
+        if (!counter) {
+            counter = document.createElement('span');
+            counter.className = 'click-count';
+            link.appendChild(counter);
+        }
+
+        // Load and display initial count
+        const count = localStorage.getItem('count_' + url) || 0;
+        if (count > 0) {
+            counter.innerText = count;
+        }
+
+        // Add click listener
+        link.addEventListener('click', () => {
+            let currentCount = parseInt(localStorage.getItem('count_' + url) || 0);
+            currentCount++;
+            localStorage.setItem('count_' + url, currentCount);
+            counter.innerText = currentCount;
+        });
+    });
+}
+
 // On page load, set the theme from localStorage or default to night
 document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'night';
     setTheme(savedTheme);
+    initCounters();
 });
 </script>
 
