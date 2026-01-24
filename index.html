@@ -71,14 +71,18 @@ body.day a {
 }
 
 .fcc-btn {
-    padding: 15px 25px;
+    padding: 15px 15px;
     cursor: pointer;
     border-radius: 10px;
     display: inline-block;
-    width: 120px;
+    width: 160px;
     margin: 5px;
     transition: all 0.3s ease;
     text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
 }
 
 body.night .fcc-btn {
@@ -110,6 +114,9 @@ body.day .fcc-btn:hover {
 @media only screen and (max-width: 576px) {
     body {
         font-size: 20px;
+    }
+    .fcc-btn {
+        width: 140px;
     }
 }
 footer {
@@ -207,10 +214,15 @@ footer {
   background-color: rgba(255, 255, 255, 0.2);
 }
 .click-count {
-  display: block;
-  font-size: 0.75em;
-  opacity: 0.7;
-  margin-top: 5px;
+  display: inline-block;
+  font-size: 0.7em;
+  opacity: 0.6;
+  margin-left: 8px;
+  background: rgba(0,0,0,0.2);
+  padding: 2px 6px;
+  border-radius: 10px;
+  min-width: 12px;
+  text-align: center;
 }
 </style>
 </head>
