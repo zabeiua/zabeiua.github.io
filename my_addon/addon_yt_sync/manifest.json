@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "YouTube Sync",
+  "version": "1.0",
+  "description": "Sync YouTube playback between devices over local network",
+  "permissions": [
+    "storage",
+    "tabs",
+    "webRequest",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icon.png"
+    }
+  },
+  "icons": {
+    "48": "icon.png"
+  }
+}
