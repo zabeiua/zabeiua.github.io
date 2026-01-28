@@ -1,0 +1,65 @@
+{
+  "manifest_version": 3,
+  "name": "T-Hunter Search Bridge",
+  "version": "1.2",
+  "description": "T-Hunter Search Bridge adds an icon next to movie/show titles on Google, IMDb, Trakt, kinopoisk. Click the icon to instantly search for the title in your local T-Hunter app.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "http://localhost:14141/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.google.com/search*",
+        "https://www.google.ru/search*",
+        "https://*.imdb.com/title/*",
+        "https://trakt.tv/*",
+        "https://*.kinopoisk.ru/*",
+        "*://lampa.mx/*",
+        "*://*.lampa.mx/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "icons": {
+    "48": "icons/thunter_48.png",
+    "96": "icons/thunter_96.png",
+    "192": "icons/thunter.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/thunter.png"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "options_ui": {
+    "page": "options.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "t-hunter-bridge@zabeiua.dotfiles",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    },
+    "gecko_android": {
+      "strict_min_version": "120.0"
+    }
+  }
+}

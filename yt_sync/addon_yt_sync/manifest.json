@@ -6,8 +6,8 @@
   "permissions": [
     "storage",
     "tabs",
-    "webRequest",
-    "<all_urls>"
+    "*://*.youtube.com/*",
+    "http://192.168.1.122:5000/*"
   ],
   "background": {
     "scripts": [
@@ -27,11 +27,24 @@
   ],
   "browser_action": {
     "default_popup": "popup.html",
-    "default_icon": {
-      "48": "icon.png"
-    }
+    "default_icon": "icon.png"
   },
   "icons": {
-    "48": "icon.png"
+    "48": "icon.png",
+    "92": "icon.png",
+    "96": "icon.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "yt-sync@zabeiua.github.io",
+      "data_collection_permissions": {
+        "required": [
+          "personallyIdentifyingInfo"
+        ]
+      }
+    },
+    "gecko_android": {
+      "strict_min_version": "120.0"
+    }
   }
 }
