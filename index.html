@@ -227,6 +227,102 @@ footer {
 .click-count:empty {
   display: none;
 }
+
+/* Submenu Container */
+.submenu-container {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* TV Trigger Button style */
+.submenu-trigger {
+    display: inline-block;
+    width: 160px;
+    margin: 5px;
+    padding: 15px 15px;
+    border-radius: 10px;
+    font-family: 'Ubuntu';
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(85, 85, 85, 0.3);
+}
+
+body.night .submenu-trigger {
+    background-color: rgba(50, 52, 55, 0.8);
+    color: #e8e6e3;
+    border: 1px solid rgba(85, 85, 85, 0.3);
+}
+body.night .submenu-trigger:hover {
+    background-color: rgba(85, 85, 85, 0.9);
+    border-color: rgba(136, 136, 136, 0.5);
+    color: #ffffff;
+}
+
+body.day .submenu-trigger {
+    background-color: rgba(30, 30, 30, 0.8);
+    color: #e0e0e0;
+    border: 1px solid rgba(60, 60, 60, 0.3);
+}
+body.day .submenu-trigger:hover {
+    background-color: rgba(50, 50, 50, 0.9);
+    border-color: rgba(80, 80, 80, 0.5);
+    color: #ffffff;
+}
+
+/* Submenu Dropdown Content */
+.submenu-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    min-width: 180px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    padding: 5px 0;
+    margin-top: 2px;
+}
+
+body.night .submenu-content {
+    background-color: rgba(30, 30, 30, 0.95);
+    border: 1px solid rgba(85, 85, 85, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+body.day .submenu-content {
+    background-color: rgba(20, 20, 20, 0.95);
+    border: 1px solid rgba(60, 60, 60, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+/* Show on hover */
+.submenu-container:hover .submenu-content {
+    display: block;
+}
+
+/* Submenu Links */
+.submenu-content .fcc-btn {
+    display: block;
+    margin: 5px auto;
+    width: 150px;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 576px) {
+    .submenu-trigger {
+        width: 140px;
+        font-size: 20px;
+    }
+    .submenu-content .fcc-btn {
+        width: 130px;
+    }
+}
 </style>
 </head>
 <body class="night">
@@ -244,6 +340,41 @@ footer {
 
 <center>
 	<div class="links">
+
+<div class="submenu-container">
+	<div class="submenu-trigger">TV</div>
+	<div class="submenu-content">
+		<a class="fcc-btn" target="blank" href="https://www.1tv.ru/live">1 канал</a>
+		<a class="fcc-btn" target="blank" href="https://smotrim.ru/channel/1">Россия 1</a>
+		<a class="fcc-btn" target="blank" href="https://smotrim.ru/channel/3">Россия 24</a>
+		<a class="fcc-btn" target="blank" href="https://www.ntv.ru/air/ntv">НТВ</a>
+		<a class="fcc-btn" target="blank" href="https://ren.tv/live">РЕН ТВ</a>
+		<a class="fcc-btn" target="blank" href="https://smotrim.ru/live/63338">Соловьёв</a>
+		<a class="fcc-btn" target="blank" href="https://www.m24.ru/live">Москва 24</a>
+		<a class="fcc-btn" target="blank" href="https://matchtv.ru/video/channel/matchtv">Матч ТВ</a>
+		<a class="fcc-btn" target="blank" href="https://hd.kinopoisk.ru/channels">Кинопоиск ТВ</a>
+		<a class="fcc-btn" target="blank" href="https://okko.tv/tv_channels/tvchannels_all/31263659">OKKO</a>
+	</div>
+</div>
+<div class="submenu-container">
+	<div class="submenu-trigger">Argentina</div>
+	<div class="submenu-content">
+		<a class="fcc-btn" target="blank" href="https://www.youtube.com/@todonoticias/live">TN</a>
+		<a class="fcc-btn" target="blank" href="https://www.youtube.com/@c5n/live">C5N</a>
+		<a class="fcc-btn" target="blank" href="https://www.youtube.com/@TVPublicaArgentina/live">TV Publica</a>
+		<a class="fcc-btn" target="blank" href="https://www.youtube.com/@canal26/live">Canal 26</a>
+		<a class="fcc-btn" target="blank" href="https://www.youtube.com/@americaenvivo/live">America TV</a>
+		<a class="fcc-btn" target="blank" href="https://www.noticiascaracol.com/en-vivo">Caracol</a>
+	</div>
+</div>
+<div class="submenu-container">
+	<div class="submenu-trigger">Детские</div>
+	<div class="submenu-content">
+		<a class="fcc-btn" target="blank" href="https://www.karusel-tv.ru/live">Карусель</a>
+		<a class="fcc-btn" target="blank" href="https://sun-tv.ru/online/">Солнце</a>
+		<a class="fcc-btn" target="blank" href="https://www.youtube.com/@eralash/videos">YT Ералаш</a>
+	</div>
+</div>
 <a class="fcc-btn" target="blank" href="https://aistudio.google.com/live">AI Studio</a>
 <a class="fcc-btn" target="blank" href="http://lampa.mx/">Lampa</a>
 <a class="fcc-btn" target="blank" href="https://hd.kinopoisk.ru/">Кинопоиск</a>
@@ -266,11 +397,6 @@ footer {
 <a class="fcc-btn" target="blank" href="https://bash.tube/">bash.tube</a>
 <a class="fcc-btn" target="blank" href="https://opermap.mash.ru/">Mash map</a>
 <a class="fcc-btn" target="blank" href="https://iz.ru/rubric/mir">Известия</a>
-<a class="fcc-btn" target="blank" href="https://www.1tv.ru/live">1 канал</a>
-<a class="fcc-btn" target="blank" href="https://smotrim.ru/channel/1">Россия 1</a>
-<a class="fcc-btn" target="blank" href="https://smotrim.ru/channel/3">Россия 24</a>
-<a class="fcc-btn" target="blank" href="https://www.ntv.ru/air/ntv">НТВ</a>
-<a class="fcc-btn" target="blank" href="https://smotrim.ru/live/63338">Соловьёв</a>
 <a class="fcc-btn" target="blank" href="https://www.mk.ru/">MK</a>
 <a class="fcc-btn" target="blank"  href="https://www.kp.ru/">КП</a> 
 <a class="fcc-btn" target="blank"  href="https://russian.rt.com/">RT</a>
@@ -321,12 +447,6 @@ footer {
 <a class="fcc-btn" target="blank"  href="https://replicate.com/">Replicate</a>
 <a class="fcc-btn" target="blank"  href="https://www.youtube.com/watch?v=v1LqLRu7lcU">Самомассаж</a>
 <a class="fcc-btn" target="blank"  href="https://youtu.be/huyjDbOd77w?si=TNbpo0d3dFNMRwu1&t=135">Для шеи</a>
-<a class="fcc-btn" target="blank"  href="https://www.youtube.com/@todonoticias/live">Todo Noticias</a>
-<a class="fcc-btn" target="blank"  href="https://www.youtube.com/@c5n/live">C5N</a>
-<a class="fcc-btn" target="blank"  href="https://www.youtube.com/@TVPublicaArgentina/live">TV Publica</a>
-<a class="fcc-btn" target="blank"  href="https://www.youtube.com/@canal26/live">Canal 26</a>
-<a class="fcc-btn" target="blank"  href="https://www.youtube.com/@americaenvivo/live">America TV</a>
-<a class="fcc-btn" target="blank"  href="https://www.noticiascaracol.com/en-vivo">Caracol</a>
 <a class="fcc-btn" target="blank"  href="https://web.stremio.com">Stremio web</a>
 <a class="fcc-btn" target="blank"  href="https://www.google.com/search?q=best+action+movies+2025">Best movies</a>
 <a class="fcc-btn" target="blank"  href="https://school.mos.ru/diary/homeworks/homeworks">МЭШ</a>
